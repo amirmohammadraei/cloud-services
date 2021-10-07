@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <title>Cloud Services</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/hideshow.js"></script>
+        
+    </head>
+
+    <body>
+        {% if messages %}
+            {% for message in messages %}
+                
+                {% if message.tags  == "success" %}
+                    <div class="alert success">
+                        <span class="closebtn">&times;</span> {{ message.message }}
+                    </div>
+                {% else %}
+                
+                    <div class="alert">
+                        <span class="closebtn">&times;</span> {{ message.message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <br><br>
+        <div class="buttons">
+            <button target="1" class="showSingle">photo 1</button>
+            <button target="2" class="showSingle">photo 2</button>
+            <button target="3" class="showSingle">photo 3</button>
+            <button target="4" class="showSingle">photo 4</button>
+            <button target="5" class="showSingle">photo 5</button>
+
+        </div>
+        <br><br>
+        <div class="center">
+            <div id="div1" class="targetdiv">
+                <img src="https://s4.uupload.ir/files/fall_hamburg_germany_a33i.jpeg" alt="alternatetext">
+                <br><br>
+                {% if photo1 is not none %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>comment</th>
+                        </tr>
+                        {% for item in photo1 %}
+                        <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.comment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+            <div id="div2" class="targetdiv" style="display:none;">
+                <img src="https://s4.uupload.ir/files/26vdz56_sd6e.jpg" alt="alternatetext">
+                <br><br>
+                {% if photo2 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>comment</th>
+                        </tr>
+                        {% for item in photo2 %}
+                        <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.comment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+            <div id="div3" class="targetdiv" style="display:none;">
+                <img src="https://s4.uupload.ir/files/aaron-burden-1ucj8bzeqrw-unsplash_mvfe.jpg" alt="alternatetext">
+                <br><br>
+                {% if photo3 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>comment</th>
+                        </tr>
+                        {% for item in photo3 %}
+                        <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.comment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+            <div id="div4" class="targetdiv" style="display:none;">
+                <img src="https://s4.uupload.ir/files/265174-1600x1030-fall-season-safety-tips_udj2.jpg" alt="alternatetext">
+                <br><br>
+                {% if photo4 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>comment</th>
+                        </tr>
+                        {% for item in photo4 %}
+                        <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.comment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+            <div id="div5" class="targetdiv" style="display:none;">
+                <img src="https://s4.uupload.ir/files/fall_lake_accotink_727d787d-a5b0-49e3-aca9-4f47f2a9efdb_q0c3.jpg" alt="alternatetext">
+                <br><br>
+                {% if photo5 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>comment</th>
+                        </tr>
+                        {% for item in photo5 %}
+                        <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.comment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}  
+            </div>
+        </div>
+        <br><br><br>
+        <div class="center">
+            <form method="POST">
+                {% csrf_token %}
+                {% for i in form %}
+                    {{ i.label }}: {{ i }} &emsp;
+                {% endfor %}
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+        <script>
+            var close = document.getElementsByClassName("closebtn");
+            var i;
+            
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function(){ div.style.display = "none"; }, 600);
+              }
+            }
+        </script>
+    </body>
+</html>  
+
+<!--
+<form action="" method="post">
+    <label for="username">name: </label> <input type="text" id="username" name="username" required="required">  &emsp;
+    <label for="message">comment: </label> <input type="text" id="message" name="message" required="required"> &emsp;
+    <label for="photo">choose a photo:</label>&emsp;
+    <select name="photos" id="photos">
+        <option value="photo1">photo1</option>
+        <option value="photo2">photo2</option>
+        <option value="photo3">photo3</option>
+        <option value="photo4">photo4</option>
+        <option value="photo5">photo5</option>
+    </select> &emsp;
+-->
+
