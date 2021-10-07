@@ -38,17 +38,33 @@
             <div id="div1" class="targetdiv">
                 <img src="https://s4.uupload.ir/files/fall_hamburg_germany_a33i.jpeg" alt="alternatetext">
                 <br><br>
-                {% if photo1 is not none %}
+                {% if photo1 %}
                     <table>
                         <tr>
                             <th>username</th>
                             <th>comment</th>
+                            <th>audio</th>
                         </tr>
                         {% for item in photo1 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.comment }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+                {% if story1 %}
+                    <table>
                         <tr>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.comment }}</td>
+                            <th>username</th>
+                            <th>story</th>
+                            <th>audio</th>
                         </tr>
+                        {% for item in story1 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.story }}</td>
+                            </tr>
                         {% endfor %}
                     </table>
                 {% endif %}
@@ -61,12 +77,28 @@
                         <tr>
                             <th>username</th>
                             <th>comment</th>
+                            <th>audio</th>
                         </tr>
                         {% for item in photo2 %}
                         <tr>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.comment }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.comment }}</td>
                         </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+                {% if story2 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>story</th>
+                            <th>audio</th>
+                        </tr>
+                        {% for item in story2 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.story }}</td>
+                            </tr>
                         {% endfor %}
                     </table>
                 {% endif %}
@@ -79,12 +111,28 @@
                         <tr>
                             <th>username</th>
                             <th>comment</th>
+                            <th>audio</th>
                         </tr>
                         {% for item in photo3 %}
                         <tr>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.comment }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.comment }}</td>
                         </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+                {% if story3 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>story</th>
+                            <th>audio</th>
+                        </tr>
+                        {% for item in story3 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.story }}</td>
+                            </tr>
                         {% endfor %}
                     </table>
                 {% endif %}
@@ -97,12 +145,28 @@
                         <tr>
                             <th>username</th>
                             <th>comment</th>
+                            <th>audio</th>
                         </tr>
                         {% for item in photo4 %}
                         <tr>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.comment }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.comment }}</td>
                         </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+                {% if story4 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>story</th>
+                            <th>audio</th>
+                        </tr>
+                        {% for item in story4 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.story }}</td>
+                            </tr>
                         {% endfor %}
                     </table>
                 {% endif %}
@@ -115,15 +179,31 @@
                         <tr>
                             <th>username</th>
                             <th>comment</th>
+                            <th>audio</th>
                         </tr>
                         {% for item in photo5 %}
                         <tr>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.comment }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.comment }}</td>
                         </tr>
                         {% endfor %}
                     </table>
                 {% endif %}  
+                {% if story5 %}
+                    <table>
+                        <tr>
+                            <th>username</th>
+                            <th>story</th>
+                            <th>audio</th>
+                        </tr>
+                        {% for item in story5 %}
+                            <tr>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.story }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
             </div>
         </div>
         <br><br><br>
@@ -150,18 +230,3 @@
         </script>
     </body>
 </html>  
-
-<!--
-<form action="" method="post">
-    <label for="username">name: </label> <input type="text" id="username" name="username" required="required">  &emsp;
-    <label for="message">comment: </label> <input type="text" id="message" name="message" required="required"> &emsp;
-    <label for="photo">choose a photo:</label>&emsp;
-    <select name="photos" id="photos">
-        <option value="photo1">photo1</option>
-        <option value="photo2">photo2</option>
-        <option value="photo3">photo3</option>
-        <option value="photo4">photo4</option>
-        <option value="photo5">photo5</option>
-    </select> &emsp;
--->
-
