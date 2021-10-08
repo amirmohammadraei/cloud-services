@@ -4,3 +4,7 @@ migrations
 .DS_Store
 media
 .env
+static_root
+cloud_services/requirements.txt
+cloud_services/fandogh.yml
+cloud_services/.fandoghignore
