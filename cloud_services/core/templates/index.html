@@ -47,8 +47,14 @@
                         </tr>
                         {% for item in photo1 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.comment }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.comment }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -89,6 +95,12 @@
                         <tr>
                             <td>{{ item.username }}</td>
                             <td>{{ item.comment }}</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                    Your browser does not support audio
+                                </audio>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -129,6 +141,12 @@
                         <tr>
                             <td>{{ item.username }}</td>
                             <td>{{ item.comment }}</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                    Your browser does not support audio
+                                </audio>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -169,6 +187,12 @@
                         <tr>
                             <td>{{ item.username }}</td>
                             <td>{{ item.comment }}</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                    Your browser does not support audio
+                                </audio>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -209,6 +233,12 @@
                         <tr>
                             <td>{{ item.username }}</td>
                             <td>{{ item.comment }}</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                    Your browser does not support audio
+                                </audio>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>
