@@ -1,11 +1,14 @@
 from pathlib import Path
 import os
+import environ
 
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-SECRET_KEY = 'o8v&u^_n_vyk2!jefmy-i*-$2nwz#t2h9#h*f268$swk41zfdb'
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = True
 
@@ -56,9 +59,9 @@ WSGI_APPLICATION = 'cloud_services.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cloud_services',
-        'USER': 'amiroo',
-        'PASSWORD': 'amiroo',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASS'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

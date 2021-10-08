@@ -10,10 +10,15 @@ from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import os
 from django.conf import settings
+import environ
 
 
-api_key_text_to_speech = '7fLwYX4fchUysL0vRAoqjpRF-QfeuKVInPnxh3rZG_xR'
-url_text_to_speech = 'https://api.eu-de.text-to-speech.watson.cloud.ibm.com/instances/12a78291-89d8-43a7-865b-3c64c4a3c956'
+env = environ.Env()
+environ.Env.read_env(os.path.join(settings.BASE_DIR, '.env'))
+
+
+api_key_text_to_speech = env('API_KEY_TEXT_TO_SPEECH')
+url_text_to_speech = env('URL_TEXT_TO_SPEECH')
 
 
 def check_toxic_comment(message):
@@ -48,8 +53,12 @@ class IndexView(FormView):
             photo = request.POST.get('photo')
             response = check_toxic_comment(comment)
             is_toxic = True if response > 0.5 else False
-            comment = Comment.objects.create(username=username, comment=comment, photo=photo, is_toxic=is_toxic)
-            comment
+            comment_obj = Comment.objects.create(username=username, comment=comment, photo=photo, is_toxic=is_toxic)
+            if is_toxic is False:
+                audio_name = f'{comment_obj.id}-photo{photo}'
+                text_to_speech1(comment, audio_name)
+                comment_obj.music = f'{audio_name}.mp3'
+                comment_obj.save()
             messages.error(self.request, 'Sorry, Your message is toxic!') if is_toxic is True else messages.success(self.request, 'Your message will be added to the post.')
             return redirect(reverse('index'))
     
@@ -63,6 +72,6 @@ class IndexView(FormView):
         context['story3'] = Story.objects.filter(photo=3)
         context['photo4'] = Comment.objects.filter(is_toxic=False, photo=4)
         context['story4'] = Story.objects.filter(photo=4)
-        context['photo5'] = Comment.objects.filter(photo=5)
+        context['photo5'] = Comment.objects.filter(is_toxic=False, photo=5)
         context['story5'] = Story.objects.filter(photo=5)
         return context

@@ -1,3 +1,6 @@
 __pycache__
 migrations
 .vscode
+.DS_Store
+media
+.env
