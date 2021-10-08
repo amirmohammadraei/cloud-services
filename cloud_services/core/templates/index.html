@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="../static/css/main.css">
         <script src="../static/js/jquery.min.js"></script>
         <script src="../static/js/hideshow.js"></script>
-        
+
     </head>
 
     <body>
@@ -62,8 +62,14 @@
                         </tr>
                         {% for item in story1 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.story }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.story }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -96,8 +102,14 @@
                         </tr>
                         {% for item in story2 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.story }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.story }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -130,8 +142,14 @@
                         </tr>
                         {% for item in story3 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.story }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.story }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -164,8 +182,14 @@
                         </tr>
                         {% for item in story4 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.story }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.story }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -198,8 +222,14 @@
                         </tr>
                         {% for item in story5 %}
                             <tr>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.story }}</td>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.story }}</td>
+                                <td>
+                                    <audio controls="controls">
+                                        <source src="/static{{ item.music.url }}" type="audio/mpeg">
+                                        Your browser does not support audio
+                                    </audio>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
