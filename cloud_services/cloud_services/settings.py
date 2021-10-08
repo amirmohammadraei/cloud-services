@@ -10,9 +10,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cloud-services-amirmraei.fandogh.cloud']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,8 +62,7 @@ DATABASES = {
         'NAME': env('DATABASE_NAME'),
         'USER': env('DATABASE_USER'),
         'PASSWORD': env('DATABASE_PASS'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': env('DATABASE_HOST'),
     }
 }
 
@@ -95,5 +94,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 MEDIA_URL = "/media/"
