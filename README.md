@@ -49,3 +49,14 @@ To run this project your system must have the following programs pre-installed
   ```sh
    python manage.py runserver
    ```
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<!-- CONTACT -->
+## Contact
+If you have any questions about how to execute, install and structure the project, be sure to inform via the email below
+
+amir.m.raei@tutanota.com
