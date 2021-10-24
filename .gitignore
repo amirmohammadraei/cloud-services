@@ -1,10 +1,21 @@
+# relates to python files
 __pycache__
+
+# migration files and changes on models and DB
 migrations
+
+# default text editor generated files
 .vscode
+
+# .DS are files which are made because change directory or smth else
 .DS_Store
-media
+
+# .env because it contains some sensitive info
 .env
+
+# These files are ignored because they relate to deployment part of project
 static_root
+media
 cloud_services/requirements.txt
 cloud_services/fandogh.yml
 cloud_services/.fandoghignore
