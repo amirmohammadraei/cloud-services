@@ -43,7 +43,7 @@ To run this project your system must have the following programs pre-installed
    ```
 8. Run makemigrations & migrate 
   ```sh
-   python maange.py makemigrations && python manage.py migrate
+   python manage.py makemigrations && python manage.py migrate
    ```
 9. Run project 
   ```sh
@@ -57,6 +57,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-If you have any questions about how to execute, install and structure the project, be sure to inform via the email below
+If you have any questions about how to execute, install or structure of the project, be sure to inform via the email below
 
 amir.m.raei@tutanota.com
